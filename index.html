@@ -59,30 +59,7 @@
 
 <!-- VOLGENDE WEDSTRIJD -->
 <section class="wedstrijdbalk">
-  <div class="wrap wedstrijdbalk-inner" data-countdown="2026-08-04T19:30:00+02:00">
-    <div class="affiche">
-      <div class="team">
-        <img src="assets/logo-512.png" alt="vv Noordwijk">
-        <span>Noordwijk</span>
-      </div>
-      <div class="vs">VS</div>
-      <div class="team">
-        <img class="clublogo" src="assets/clubs/rijnsburgse-boys.jpg" alt="Rijnsburgse Boys">
-        <span>Rijnsburgse Boys</span>
-      </div>
-    </div>
-    <div class="wedstrijd-meta">
-      <strong>Oefenwedstrijd</strong>
-      dinsdag 4 augustus 2026 &middot; 19.30 uur<br>
-      Sportpark Duinwetering, veld 1
-    </div>
-    <div class="countdown">
-      <div class="count-item"><b data-cd-d>00</b><span>Dagen</span></div>
-      <div class="count-item"><b data-cd-u>00</b><span>Uur</span></div>
-      <div class="count-item"><b data-cd-m>00</b><span>Min</span></div>
-      <div class="count-item"><b data-cd-s>00</b><span>Sec</span></div>
-    </div>
-  </div>
+  <div class="wrap wedstrijdbalk-inner" data-volgende></div>
 </section>
 
 <!-- NIEUWS -->
@@ -157,46 +134,20 @@
 <!-- AGENDA -->
 <section class="sectie">
   <div class="wrap">
-    <span class="kicker reveal">Agenda</span>
-    <h2 class="sectie-kop reveal">Binnenkort op en rond het sportpark</h2>
-    <div class="agenda-lijst">
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>18</b><span>JUL</span></div>
-        <h3><img class="clubje" src="assets/clubs/eemdijk.svg" alt="vv Eemdijk">Oefenwedstrijd vv Eemdijk &ndash; vv Noordwijk</h3>
-        <span class="tijd">14.30 uur</span>
-      </div>
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>25</b><span>JUL</span></div>
-        <h3><img class="clubje" src="assets/clubs/sjc.png" alt="vv SJC">Oefenwedstrijd vv SJC &ndash; vv Noordwijk</h3>
-        <span class="tijd">14.00 uur</span>
-      </div>
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>28</b><span>JUL</span></div>
-        <h3><img class="clubje" src="assets/clubs/katwijk.png" alt="vv Katwijk">Oefenwedstrijd vv Katwijk &ndash; vv Noordwijk</h3>
-        <span class="tijd">20.00 uur</span>
-      </div>
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>01</b><span>AUG</span></div>
-        <h3><img class="clubje" src="assets/clubs/afc.png" alt="AFC Amsterdam">Oefenwedstrijd AFC Amsterdam &ndash; vv Noordwijk</h3>
-        <span class="tijd">12.00 uur</span>
-      </div>
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>04</b><span>AUG</span></div>
-        <h3><img class="clubje" src="assets/clubs/rijnsburgse-boys.jpg" alt="Rijnsburgse Boys">Oefenwedstrijd vv Noordwijk &ndash; Rijnsburgse Boys</h3>
-        <span class="tijd">19.30 uur</span>
-      </div>
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>08</b><span>AUG</span></div>
-        <h3><img class="clubje" src="assets/clubs/de-treffers.png" alt="De Treffers">Oefenwedstrijd vv Noordwijk &ndash; De Treffers</h3>
-        <span class="tijd">14.30 uur</span>
-      </div>
-      <div class="agenda-rij reveal">
-        <div class="agenda-datum"><b>15</b><span>AUG</span></div>
-        <h3><img class="clubje" src="assets/logo-512.png" alt="vv Noordwijk">Start seizoen derde divisie B</h3>
-        <span class="tijd">Hele dag</span>
-      </div>
-    </div>
-    <p class="reveal" style="margin-top:26px"><a href="wedstrijden.html" style="color:var(--rood-licht);font-weight:600">Volledig programma en entreeprijzen &rarr;</a></p>
+    <span class="kicker reveal">Programma</span>
+    <h2 class="sectie-kop reveal">De eerstvolgende wedstrijden</h2>
+    <p class="sectie-intro reveal">Noordwijk 1 speelt dit seizoen in de derde divisie zaterdag B. Thuiswedstrijden zijn op Sportpark Duinwetering, veld 1.</p>
+    <div class="agenda-lijst" data-programma="6"></div>
+    <p class="reveal" style="margin-top:26px"><a href="wedstrijden.html" style="color:var(--rood-licht);font-weight:600">Volledig programma, stand en tickets &rarr;</a></p>
+  </div>
+</section>
+
+<!-- CLUBAGENDA -->
+<section class="sectie" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker reveal">Naast het veld</span>
+    <h2 class="sectie-kop reveal">In het sportcaf&eacute;</h2>
+    <div class="agenda-lijst" data-clubagenda></div>
   </div>
 </section>
 
@@ -276,6 +227,7 @@
   </div>
 </footer>
 
+<script src="assets/wedstrijden.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

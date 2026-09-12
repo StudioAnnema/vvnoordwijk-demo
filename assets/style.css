@@ -331,6 +331,77 @@ h1, h2, h3, .display {
 }
 .agenda-rij .tijd { font-size: 13.5px; color: var(--grijs); white-space: nowrap; }
 
+/* ============ LABELS BIJ WEDSTRIJDEN ============ */
+.thuis-label, .uit-label, .beker-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px; white-space: nowrap; margin-left: 4px;
+}
+.thuis-label { background: rgba(222,9,23,.16); color: #ff6a63; border: 1px solid rgba(222,9,23,.45); }
+.uit-label { background: rgba(255,255,255,.06); color: var(--grijs); border: 1px solid var(--paneel-rand); }
+.beker-label { background: rgba(233,223,200,.12); color: var(--zand); border: 1px solid rgba(233,223,200,.3); }
+
+.clublogo--letters {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paneel); border: 1px solid var(--paneel-rand); color: var(--zand);
+  font-family: var(--display); font-size: 20px; letter-spacing: .02em;
+}
+.clubje.clublogo--letters { font-size: 13px; }
+.geen-wedstrijd { width: 100%; text-align: center; font-size: 17px; }
+
+/* ============ UITSLAGEN ============ */
+.uitslagen { margin-top: 28px; border-top: 1px solid var(--paneel-rand); }
+.uitslag-rij {
+  display: grid; grid-template-columns: 84px 1fr auto; gap: 18px; align-items: center;
+  padding: 15px 8px; border-bottom: 1px solid var(--paneel-rand);
+}
+.uitslag-datum { font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: #6d6d76; }
+.uitslag-teams { font-size: 15.5px; color: var(--wit); }
+.uitslag-teams em { font-style: normal; color: #6d6d76; padding: 0 4px; }
+.uitslag-score {
+  font-family: var(--display); font-weight: 400; font-size: 21px; color: var(--wit);
+  background: var(--paneel); border: 1px solid var(--paneel-rand);
+  border-radius: 8px; padding: 4px 14px 2px; white-space: nowrap;
+}
+
+/* ============ STAND ============ */
+.stand-wrap { overflow-x: auto; margin-top: 28px; }
+.stand-tabel { width: 100%; border-collapse: collapse; min-width: 520px; }
+.stand-tabel th {
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--zand);
+  font-weight: 700; text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--paneel-rand);
+}
+.stand-tabel td { padding: 12px 10px; border-bottom: 1px solid var(--paneel-rand); font-size: 14.5px; }
+.stand-tabel td b { color: var(--wit); font-size: 16px; }
+.stand-team { display: flex; align-items: center; gap: 11px; color: var(--wit); white-space: nowrap; }
+.stand-logo { height: 26px; width: 26px; border-radius: 50%; background: var(--wit); object-fit: contain; padding: 2px; flex: none; }
+.stand-tabel tr.eigen-club td { background: rgba(222,9,23,.09); }
+.stand-tabel tr.eigen-club .stand-team { font-weight: 700; }
+
+/* ============ TICKETWIZARD ============ */
+.ticket-kaart {
+  background: var(--paneel); border: 1px solid var(--paneel-rand); border-radius: 16px;
+  padding: 32px; display: flex; flex-direction: column; gap: 18px;
+}
+.ticket-veld { display: flex; flex-direction: column; gap: 8px; }
+.ticket-veld label {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--zand);
+}
+.ticket-veld select, .ticket-veld input {
+  background: var(--donker); border: 1px solid var(--paneel-rand); border-radius: 10px;
+  color: var(--wit); font-family: var(--body); font-size: 15px; padding: 13px 14px; width: 100%;
+}
+.ticket-veld select:focus, .ticket-veld input:focus { outline: 2px solid var(--rood-licht); outline-offset: 1px; }
+.ticket-totaal {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  border-top: 1px solid var(--paneel-rand); padding-top: 18px; margin-top: 4px;
+}
+.ticket-totaal span { font-size: 14px; }
+.ticket-totaal b { font-family: var(--display); font-weight: 400; font-size: 38px; color: var(--wit); }
+.ticket-melding {
+  background: rgba(222,9,23,.1); border: 1px solid rgba(222,9,23,.4);
+  border-radius: 10px; padding: 16px 18px; font-size: 14.5px; color: var(--wit);
+}
+
 /* ============ SPONSORS MARQUEE ============ */
 .marquee-sectie { border-top: 1px solid var(--paneel-rand); border-bottom: 1px solid var(--paneel-rand); padding: 30px 0; overflow: hidden; }
 .marquee { display: flex; width: max-content; animation: loop 30s linear infinite; }
@@ -384,6 +455,8 @@ h1, h2, h3, .display {
 
 /* ============ CONTENT-BLOKKEN ============ */
 .twee-kolom { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 48px; }
+/* Zonder dit duwt brede inhoud (zoals de standtabel) de kolom breder dan het scherm */
+.twee-kolom > * { min-width: 0; }
 .twee-kolom .foto { border-radius: 16px; overflow: hidden; border: 1px solid var(--paneel-rand); }
 .proza p { margin-bottom: 18px; }
 .proza p strong, .proza b { color: var(--wit); }
@@ -472,6 +545,10 @@ blockquote.missie {
   .agenda-rij { grid-template-columns: 64px 1fr; }
   .agenda-rij .tijd { grid-column: 2; }
   .agenda-datum b { font-size: 24px; }
+  .agenda-rij h3 { flex-wrap: wrap; gap: 9px; font-size: 15px; }
+  .uitslag-rij { grid-template-columns: 62px 1fr auto; gap: 12px; }
+  .uitslag-teams { font-size: 14px; }
+  .ticket-kaart { padding: 24px; }
   .countdown { gap: 10px; }
   .count-item { min-width: 62px; }
   .hero-ctas .knop { width: 100%; }
